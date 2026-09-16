@@ -36,7 +36,8 @@ jobs:
 
       - name: Download Checkstyle
         run: |
-          curl -sSL -o checkstyle.jar \
+          curl --fail --location --silent --show-error \
+            -o checkstyle.jar \
             https://github.com/checkstyle/checkstyle/releases/download/checkstyle-14.1.0/checkstyle-14.1.0-all.jar
 
       - name: Run Checkstyle
