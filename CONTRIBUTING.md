@@ -1,0 +1,206 @@
+# Правила работы с репозиторием
+
+Этот документ описывает порядок выполнения, проверки и публикации домашних заданий.
+
+## Структура домашнего задания
+Каждое домашнее задание размещается в собственной директории участника:
+```text
+homework/<username>/hw-XX/
+```
+Пример:
+
+```text
+homework/vasileva/hw-01/
+├── src/
+│   └── Main.java
+└── README.md
+```
+Где:
+- `<username>` — username участника на GitHub;
+- `hw-XX` — номер домашнего задания;
+- `src/` — директория с исходным кодом;
+- `README.md` — описание задания.
+
+## Имена директорий и файлов
+Используются только латинские буквы, цифры, дефисы и подчёркивания.
+Правильно:
+```text
+homework/vasileva/hw-01/
+homework/ivanov/hw-02/
+```
+Неправильно:
+```text
+homework/Васильева/ДЗ 1/
+homework/Ivanov/Home Work 2/
+```
+Правила:
+- имя участника пишется в нижнем регистре;
+- используется GitHub username участника или фамилия;
+- номер задания указывается с ведущим нулём;
+- используется формат `hw-01`, `hw-02`, `hw-10`;
+- в названиях не используются пробелы и кириллица;
+- названия директорий и файлов пишутся в нижнем регистре, если это не требование Java.
+
+## Рабочие ветки
+Ветка `main` содержит проверенные решения.
+Для каждой домашней работы создаётся отдельная рабочая ветка:
+```text
+<username>/hw-XX
+```
+Примеры:
+```text
+vasileva/hw-01
+ivanov/hw-02
+```
+Для исправления замечаний после проверки можно использовать
+```text
+<username>/fix-hw-XX
+```
+Пример:
+```text
+vasileva/fix-hw-01
+```
+Правила:
+- одна ветка предназначена для одной домашней работы;
+- ветка создаётся от актуальной `main`;
+- прямой push в `main` запрещён;
+- не следует использовать одну ветку для нескольких несвязанных заданий;
+- после слияния Pull Request рабочую ветку удаляется автоматически.
+
+## Коммиты
+Сообщение коммита должно быть кратким и понятным.
+Рекомендуемый формат:
+```text
+<description>
+```
+Примеры:
+```text
+add homework 01 solution
+correct homework 01 solution
+update homework readme
+add loop example
+```
+Правила:
+- сообщение коммита пишется на английском языке;
+- не используются сообщения `update`, `changes`, `done` без уточнения;
+- один коммит должен содержать одно логически связанное изменение;
+- не следует добавлять в один коммит изменения нескольких участников.
+
+## Pull Request
+Pull Request создаётся из рабочей ветки участника в ветку `main`.
+Пример:
+```text
+head branch: vasileva/hw-01
+base branch: main
+```
+### Название Pull Request
+Формат:
+```text
+[<username>][hw-XX] <description>
+```
+Описание в названии Pull Request пишется только на английском языке.
+Правила:
+- `<username>` — GitHub username или фамилия участника;
+- `hw-XX` — номер домашнего задания с ведущим нулём;
+- описание пишется на английском языке;
+- в названии не используются русские буквы;
+- между двумя блоками нет пробела;
+- описание должно быть кратким и отражать содержание работы.
+Правильно:
+```text
+[vasileva][hw-01] add: variables and data types homework
+```
+```text
+[vasileva][hw-01] fix: correct homework solution
+```
+Неправильно:
+```text
+[vasileva hw-01] add homework
+```
+```text
+[vasileva] [hw-01] add homework
+```
+```text
+[vasileva][hw-1] add homework
+```
+```text
+[vasileva][hw-01] переменные и типы данных
+```
+
+### Draft Pull Request
+Если домашняя работа ещё не готова к проверке, используйте префикс `Draft:`:
+```text
+Draft: [vasileva][hw-01] add variables and data types homework
+```
+После завершения работы статус Draft необходимо изменить на готовый к проверке.
+
+### Описание Pull Request
+Описание Pull Request пишется на русском или английском языке.
+Рекомендуемый шаблон:
+
+```markdown
+## Changes
+
+- Added the solution for homework `hw-01`.
+- Implemented all required tasks.
+- Added instructions for running the solution.
+
+## Author
+
+`vasileva`
+
+## Directory
+
+`homework/vasileva/hw-01/`
+
+## Verification
+
+- [x] The code compiles.
+- [x] The program runs successfully.
+- [x] Local checks were completed.
+- [x] GitHub Actions passed successfully.
+- [x] No temporary files were added.
+- [x] Only the author's directory was changed.
+
+## Notes
+
+Additional information, questions or implementation details.
+```
+
+## Комментарии и review
+Комментарии в Pull Request можно писать на русском и английском языках.
+
+Если reviewer оставил замечания, исправления добавляются в ту же рабочую ветку.
+
+Существующий Pull Request обновится автоматически.
+
+## Общие материалы
+Общие примеры и материалы размещаются в:
+
+```text
+shared/
+├── README.md
+└── examples/
+```
+Для изменений общих материалов используется формат:
+```text
+[<username>][shared] add loop example
+``
+Для изменений документации используется формат:
+```text
+[<username>][docs] update repository readme
+```
+Такие Pull Request также оформляются только на английском языке.
+
+## Запрещено
+Запрещается:
+- делать прямой push в `main`;
+- изменять директории других участников без согласования;
+- добавлять `.class`, `build/`, `out/`, `target/`;
+- добавлять файлы IDE `.idea/`, `.vscode/`, `*.iml`;
+- добавлять пароли, токены и другие секреты;
+- использовать кириллицу в названиях веток и директорий;
+- использовать русские буквы в названии Pull Request;
+- смешивать несколько несвязанных домашних заданий в одном Pull Request;
+- использовать `git push --force` для ветки `main`;
+- копировать решение другого участника без согласования.
