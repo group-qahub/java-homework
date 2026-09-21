@@ -5,28 +5,28 @@
 ## Структура домашнего задания
 Каждое домашнее задание размещается в собственной директории участника:
 ```text
-homework/<username>/src/hw-XX/
+homework/<username>/src/hw_XX/
 ```
 Пример:
 
 ```text
 homework/vasileva/src/
-├── hw-01/
+├── hw_01/
 │   └── Main.java
 └── README.md
 ```
 Где:
 - `<username>` — username участника на GitHub;
 - `src/` — директория с исходным кодом;
-- `hw-XX` — номер домашнего задания;
+- `hw_XX` — номер домашнего задания;
 - `README.md` — описание задания (по желанию).
 
 ## Имена директорий и файлов
 Используются только латинские буквы, цифры, дефисы и подчёркивания.
 Правильно:
 ```text
-homework/vasileva/src/hw-01/
-homework/ivanov/src/hw-02/
+homework/vasileva/src/hw_01/
+homework/ivanov/src/hw_02/
 ```
 Неправильно:
 ```text
@@ -37,7 +37,7 @@ homework/Ivanov/src/Home Work 2/
 - имя участника пишется в нижнем регистре;
 - используется GitHub username участника или фамилия;
 - номер задания указывается с ведущим нулём;
-- используется формат `hw-01`, `hw-02`, `hw-10`;
+- используется формат `hw_01`, `hw_02`, `hw_10`;
 - в названиях не используются пробелы и кириллица;
 - названия директорий и файлов пишутся в нижнем регистре, если это не требование Java.
 
@@ -151,7 +151,7 @@ Draft: [vasileva][hw-01] add variables and data types homework
 
 ## Directory
 
-`homework/vasileva/hw-01/`
+`homework/vasileva/hw_01/`
 
 ## Notes
 
